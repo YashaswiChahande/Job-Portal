@@ -1,9 +1,14 @@
-import { SignedOut, SignInButton, SignedIn, UserButton, useUser, SignIn } from '@clerk/clerk-react'
-import React, { useEffect, useState } from 'react'
-import { Link, useSearchParams } from 'react-router-dom'
-import { Button } from './ui/button'
-import { BriefcaseBusiness, Heart } from 'lucide-react';
-
+import { useEffect, useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
+import {
+  SignedIn,
+  SignedOut,
+  UserButton,
+  SignIn,
+  useUser,
+} from "@clerk/clerk-react";
+import { Button } from "./ui/button";
+import { BriefcaseBusiness, Heart, PenBox } from "lucide-react";
 
 const Header = () => {
   const [showSignIn, setShowSignIn] = useState(false);
@@ -40,7 +45,7 @@ const Header = () => {
           <SignedIn>
             {user?.unsafeMetadata?.role === "recruiter" && (
               <Link to="/post-job">
-                <Button variant="destructive" className="rounded-full">
+                <Button variant="destructive"      className="rounded-full">
                   <PenBox size={20} className="mr-2" />
                   Post a Job
                 </Button>
@@ -48,7 +53,7 @@ const Header = () => {
             )}
             <UserButton
               appearance={{
-                elements: { 
+                elements: {
                   avatarBox: "w-10 h-10",
                 },
               }}
