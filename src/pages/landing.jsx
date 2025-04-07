@@ -1,14 +1,22 @@
-import React from 'react'
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, } from "@/components/ui/carousel";
-import { Link } from 'react-router-dom'
- import companies from '../data/companies.json'
- import Autoplay from "embla-carousel-autoplay"
- import { Accordion, AccordionContent, AccordionItem, AccordionTrigger, } from "@/components/ui/accordion";
- import faqs from "../data/faq.json";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+} from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+import companies from "../data/companies.json";
+import faqs from "../data/faq.json";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { Link } from "react-router-dom";
 
- const LandingPage = () => {
+const LandingPage = () => {
   return (
     <main className="flex flex-col gap-10 sm:gap-20 py-10 sm:py-20">
       <section className="text-center ">
@@ -45,7 +53,7 @@ import { Link } from 'react-router-dom'
             delay: 2000,
           }),
         ]}
-        className="w-full p-10"
+        className="w-full py-10"
       >
         <CarouselContent className="flex gap-5 sm:gap-20 items-center">
           {companies.map(({ name, id, path }) => (
@@ -62,7 +70,7 @@ import { Link } from 'react-router-dom'
 
       <img src="/banner.jpeg" className="w-full" />
 
-      <section className="grid grid-cols-1 px-10 md:grid-cols-2  gap-4">
+      <section className="grid grid-cols-1 md:grid-cols-2 gap-4">
         <Card>
           <CardHeader>
             <CardTitle className="font-bold">For Job Seekers</CardTitle>
@@ -79,9 +87,9 @@ import { Link } from 'react-router-dom'
             Post jobs, manage applications, and find the best candidates.
           </CardContent>
         </Card>
-      </section >
+      </section>
 
-      <Accordion type="multiple" className="w-full p-10">
+      <Accordion type="multiple" className="w-full">
         {faqs.map((faq, index) => (
           <AccordionItem key={index} value={`item-${index + 1}`}>
             <AccordionTrigger>{faq.question}</AccordionTrigger>
